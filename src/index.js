@@ -2,18 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 // import "./index.css";
 // import App from "./App";
+const elem1 = "Привіт";
+const elem2 = ", світе!";
 
-const element = React.createElement("div", {
-  a: 5,
-  b: 10,
-  children: ["Привіт,", " ", "світе!"],
-});
+const jsxElement = (
+  <div>
+    {elem1}
+    {elem2}
+  </div>
+);
 
-const jsxElement = <div>Привіт, світе!</div>;
-
-console.log(element);
 console.log(jsxElement);
-ReactDOM.render(element, document.querySelector("#root"));
+ReactDOM.render(jsxElement, document.querySelector("#root"));
 // ReactDOM.render(
 //   <React.StrictMode>
 //     <App />
