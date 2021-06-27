@@ -1,36 +1,9 @@
 import "./App.css";
-import Painting from "./components/Painting";
 import paintings from "./paintings.json";
+import PaintingList from "./components/PaintingList";
 
 function App() {
-  return (
-    <div>
-      <Painting
-        imageUrl={paintings[0].url}
-        title={paintings[0].title}
-        author={paintings[0].author.url}
-        name={paintings[0].author.tag}
-        price={paintings[0].price}
-        quantity={paintings[0].quantity}
-      />
-      <Painting
-        imageUrl={paintings[1].url}
-        title={paintings[1].title}
-        author={paintings[1].author.url}
-        name={paintings[1].author.tag}
-        price={paintings[1].price}
-        quantity={paintings[1].quantity}
-      />
-      <Painting
-        imageUrl={paintings[2].url}
-        title={paintings[2].title}
-        author={paintings[2].author.url}
-        name={paintings[2].author.tag}
-        price={paintings[2].price}
-        quantity={paintings[2].quantity}
-      />
-    </div>
-  );
+  return <div>{<PaintingList paintings={paintings} />}</div>;
 }
 
 export default App;
