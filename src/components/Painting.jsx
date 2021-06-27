@@ -11,7 +11,7 @@ function Painting({
 }) {
   return (
     <div>
-      <img src={imageUrl} alt={title} width="480" />
+      <img src={imageUrl ?? defaultImage} alt={title} width="480" />
       <h2>{title}</h2>
       <p>
         Автор: <a href={author}>{name}</a>
@@ -24,12 +24,12 @@ function Painting({
 }
 
 Painting.propTypes = {
-  imageUrl: PropTypes.string,
-  title: PropTypes.string,
-  author: PropTypes.string,
-  name: PropTypes.string,
-  price: PropTypes.number,
-  quantity: PropTypes.number,
+  imageUrl: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  quantity: PropTypes.number.isRequired,
 };
 
 export default Painting;
