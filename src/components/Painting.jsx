@@ -1,10 +1,12 @@
 import defaultImage from "../default.jpg";
+import PropTypes from "prop-types";
 function Painting({
   imageUrl = defaultImage,
   title,
   author,
   name = "невідомий художник",
   price,
+  quantity,
 }) {
   return (
     <div>
@@ -14,10 +16,19 @@ function Painting({
         Автор: <a href={author}>{name}</a>
       </p>
       <p>Цена: {price}кредитов</p>
-      <p>Доступність: закінчується, або є в наявності</p>
+      <p>Доступність: {quantity < 10 ? "закінчується" : "є в наявності"}</p>
       <button type="button">Додати в корзину</button>
     </div>
   );
 }
+
+Painting.propTypes = {
+  imageUrl: PropTypes.string,
+  title: PropTypes.string,
+  author: PropTypes.string,
+  name: PropTypes.string,
+  price: PropTypes.number,
+  quantity: PropTypes.number,
+};
 
 export default Painting;
